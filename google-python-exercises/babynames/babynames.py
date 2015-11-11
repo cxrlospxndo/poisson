@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# !/usr/bin/python
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -61,13 +61,21 @@ def extract_names(filename):
       rank.append(m)
       rank.append(f)
 
+  summary = [year] + sorted(rank)
+  summary = '\n'.join(summary) + '\n'
   # print [year] + sorted(rank)
-  print year
-  for baby in sorted(rank):
-    print baby
+  # print year
+  # for baby in sorted(rank):
+  #   print baby
+  filename = '%s.summary' % (filename) 
+  w = open(filename, "wb")
+  w.write(summary);
+  w.close()
 
-  return
 
+def generate_summary_files(files):
+  for filename in files:
+    extract_names(filename)
 
 def main():
   # This command-line parsing code is provided.
@@ -87,10 +95,18 @@ def main():
 
   # +++your code here+++
   # print args
-  filename = args[0]
-  extract_names(filename)
+  if summary:
+    print args
+    generate_summary_files(args)
+  else:
+    filename = args[0]
+    extract_names(filename)
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
 
 if __name__ == '__main__':
   main()
+
+# grep 'Nick ' *.summary
+# on windows
+# findstr "\<Nick\>" *.summary

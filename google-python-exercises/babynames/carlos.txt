@@ -1,0 +1,8 @@
+baby1994.html.summary:Trinity 789
+baby1996.html.summary:Trinity 672
+baby1998.html.summary:Trinity 526
+baby2000.html.summary:Trinity 74
+baby2002.html.summary:Trinity 70
+baby2004.html.summary:Trinity 48
+baby2006.html.summary:Trinity 63
+baby2008.html.summary:Trinity 70
